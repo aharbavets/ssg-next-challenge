@@ -59,7 +59,7 @@ export const MainLayout: FunctionComponent<
       )}
     >
       <div className={classNames("flex flex-col h-screen w-screen")}>
-        <div className={classNames("flex gap-2 justify-center")}>
+        <div className={classNames("flex gap-2 justify-center m-3")}>
           {Object.values(Person).map((person) => (
             <Button
               key={person}
@@ -75,7 +75,7 @@ export const MainLayout: FunctionComponent<
         </div>
 
         {isLoading && (
-          <UserViewSkeleton/>
+          <UserViewSkeleton className={classNames("flex-1 gap-2")}/>
         )}
 
         {isError && (

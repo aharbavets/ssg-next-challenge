@@ -1,5 +1,5 @@
-import { User } from "@/entities/User";
-import React, { FunctionComponent, PropsWithChildren } from "react";
+import {User} from "@/entities/User";
+import React, {FunctionComponent, PropsWithChildren} from "react";
 import classNames from "classnames";
 
 type ButtonProps = {
@@ -17,7 +17,7 @@ export const UserView: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
 }) => {
   if (!user) {
     return (
-      <div className={classNames("text-center")}>
+      <div className={classNames("text-center text-xl mt-9")}>
         Please click a button above to view some person
       </div>
     );
@@ -49,8 +49,8 @@ export const UserView: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
             alt={user.name}
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h1 className={"text-3xl text-center"}>{user.name}</h1>
-            <h2 className={"text-2xl text-center"}>{user.title}</h2>
+            <h1 className={"text-3xl"}>{user.name}</h1>
+            <h2 className={"text-2xl"}>{user.title}</h2>
 
             <div className={classNames("text-center")}>
               Followers: {user.metrics.followers} Following:{" "}
