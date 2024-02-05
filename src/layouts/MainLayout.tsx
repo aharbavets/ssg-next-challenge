@@ -47,7 +47,7 @@ export const MainLayout: FunctionComponent<
   );
 
   // @ts-ignore
-  let message = error.message
+  let message = error?.message
 
   return (
     <main
