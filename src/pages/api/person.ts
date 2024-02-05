@@ -1,20 +1,10 @@
 import { NextApiHandler } from "next";
 import { Person } from "@/utils/common/person";
+import { User } from "@/entities/User";
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
-type User = {
-  backgroundImageUrl: string;
-  profilePictureUrl: string;
-  name: string;
-  title: string;
-  metrics: {
-    followers: number;
-    following: number;
-  };
-};
 
 const mockUsers: { [key in Person]: User | null } = {
   [Person.PersonA]: {
