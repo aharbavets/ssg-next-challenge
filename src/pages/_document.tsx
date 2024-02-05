@@ -1,4 +1,7 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from "next/document";
+import { QueryClient } from "react-query";
+
+const queryClient = new QueryClient();
 
 export default function Document() {
   return (
