@@ -1,11 +1,11 @@
-import { FunctionComponent, PropsWithChildren, useState } from "react";
-import { Inter } from "next/font/google";
+import {FunctionComponent, PropsWithChildren, useState} from "react";
+import {Inter} from "next/font/google";
 import classNames from "classnames";
-import { Button } from "@/components/Button";
-import { Person } from "@/utils/common/person";
-import { UserView } from "@/components/UserView";
-import { useQuery } from "react-query";
-import { User } from "@/entities/User";
+import {Button} from "@/components/Button";
+import {Person} from "@/utils/common/person";
+import {UserView} from "@/components/UserView";
+import {useQuery} from "react-query";
+import {User} from "@/entities/User";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +46,9 @@ export const MainLayout: FunctionComponent<
     getPerson,
   );
 
+  // @ts-ignore
+  let message = error.message
+
   return (
     <main
       className={classNames(
@@ -78,7 +81,7 @@ export const MainLayout: FunctionComponent<
 
         {isError && (
           <div className={classNames("text-center text-xl mt-9")}>
-            {error.message}
+            {message}
           </div>
         )}
 
