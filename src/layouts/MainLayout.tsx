@@ -6,6 +6,7 @@ import {Person} from "@/utils/common/person";
 import {UserView} from "@/components/UserView";
 import {useQuery} from "react-query";
 import {User} from "@/entities/User";
+import {UserViewSkeleton} from '@/components/UserViewSkeleton'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,9 +75,7 @@ export const MainLayout: FunctionComponent<
         </div>
 
         {isLoading && (
-          <div className={classNames("text-center text-xl mt-9")}>
-            Loading...
-          </div>
+          <UserViewSkeleton/>
         )}
 
         {isError && (
